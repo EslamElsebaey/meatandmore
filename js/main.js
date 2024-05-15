@@ -132,7 +132,9 @@ $(document).ready(function () {
       $("header").removeClass("fixed-header");
       $("header").removeClass("blur-header");
       $("header").removeClass("padding-8");
-      $(".logo img").attr("src", "images/meatandmore-logo-dark.svg");
+      if (!$("body").hasClass("pages-body")) {
+        $(".logo img").attr("src", "images/meatandmore-logo-dark.svg");
+      }
     }
   });
 
@@ -141,15 +143,23 @@ $(document).ready(function () {
   let openBtn = $(".openBtn");
   openBtn.on("click", function () {
     if ($(window).width() < 992) {
+      if ($("body").hasClass("pages-body")) {
+        let currentSrc = $(".logo img").attr("src");
+        if (currentSrc == "images/meatandmore-logo-light.svg") {
+          $(".logo img").attr("src", "images/meatandmore-logo-dark.svg");
+        } else {
+          $(".logo img").attr("src", "images/meatandmore-logo-light.svg");
+        }
+        $(".pages-body header").toggleClass("pages-fixed-header");
+      }
+
       if ($(window).scrollTop() > 100) {
         if (!$("body").hasClass("pages-body")) {
           $("header").toggleClass("header-mob");
           let currentSrc = $(".logo img").attr("src");
           if (currentSrc == "images/meatandmore-logo-dark.svg") {
-            console.log(currentSrc);
             $(".logo img").attr("src", "images/meatandmore-logo-light.svg");
           } else {
-            console.log(currentSrc);
             $(".logo img").attr("src", "images/meatandmore-logo-dark.svg");
           }
         }
@@ -165,13 +175,24 @@ $(document).ready(function () {
     }
   });
 
-  if ($(window).width() < 992) {
-    $(".big-menu li a").on("click", function () {
-      $(".navigation").slideUp(400);
-      $(".openBtn i").removeClass("fa-xmark");
-      $("body").removeClass("overflow-hidden");
-    });
-  }
+if ($(window).width() < 992) {
+  $(".big-menu li a").on("click", function () {
+    $(".navigation").slideUp(400);
+    $(".openBtn i").removeClass("fa-xmark");
+    $("body").removeClass("overflow-hidden");
+    if (!$("body").hasClass("pages-body")) {
+      $("header").removeClass("header-mob");
+    } else {
+      $("header").removeClass("pages-fixed-header");
+      let currentSrc = $(".logo img").attr("src");
+      if (currentSrc == "images/anamcom-logo-light.svg") {
+        $(".logo img").attr("src", "images/meatandmore-logo-dark.svg");
+      } else {
+        $(".logo img").attr("src", "images/meatandmore-logo-light.svg");
+      }
+    }
+  });
+}
 
   // **************************************************************************************************
 

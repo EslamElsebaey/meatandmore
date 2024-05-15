@@ -127,6 +127,54 @@ button:focus {
   background-color: #f2f2f2;
 }
 
+.read-more {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #808080;
+  text-align: center;
+  display: block;
+  margin-top: 40px;
+  text-transform: capitalize;
+}
+.read-more:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+.breadcrumb-sec {
+  padding: 25px 0;
+  margin-top: 130px;
+}
+
+.item-home::after {
+  content: " / ";
+  padding: 0;
+  color: #808080;
+  padding-inline-start: 3px;
+  padding-inline-end: 8px;
+}
+
+.breadcrumb {
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.bread-link {
+  transition: all linear 0.2s;
+}
+.bread-link:hover {
+  color: #ff6600;
+}
+
+ol.breadcrumb li a, ol.breadcrumb li span {
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #808080;
+  text-decoration: none;
+}
+
 .preloader-container {
   position: fixed;
   top: 0;
@@ -224,6 +272,9 @@ button:focus {
   }
   .preloader::before {
     animation-duration: 2s;
+  }
+  .read-more {
+    margin-top: 25px;
   }
 }
 .about {
@@ -1904,6 +1955,80 @@ footer {
     flex-wrap: wrap;
     row-gap: 20px;
     justify-content: center;
+  }
+}
+.pages-body .questions-parent {
+  max-width: 100%;
+  width: 100%;
+}
+.pages-body .ques-answer {
+  width: 1017px;
+}
+
+.pages-body .big-menu li a {
+  color: #000;
+}
+.pages-body .big-menu li a:hover {
+  color: #ff6600;
+}
+.pages-body .header-links a {
+  background-color: #000;
+}
+.pages-body .header-links a:hover {
+  background-color: #ff6600;
+}
+.pages-body .openBtn i {
+  color: #000;
+}
+
+.page-general-sec {
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+.page-general-sec .page-sec-head {
+  font-size: 24px;
+  text-transform: capitalize;
+  color: #000;
+  font-weight: 700;
+  text-align: start;
+  margin-bottom: 40px;
+}
+.page-general-sec .page-sec-para {
+  font-size: 18px;
+  line-height: 36px;
+  color: #000;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1199px) {
+  .pages-body .ques-answer {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .pages-body .big-menu li a {
+    color: #fff;
+  }
+  .pages-fixed-header .openBtn i {
+    color: #fff;
+  }
+  .pages-fixed-header .header-links a {
+    background-color: rgba(255, 255, 255, 0.102);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-general-sec .page-sec-head {
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  .page-general-sec {
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+  .page-general-sec .page-sec-para {
+    line-height: 1.7;
+    font-size: 17px;
   }
 }
 html[dir=ltr] .ques-answer {
