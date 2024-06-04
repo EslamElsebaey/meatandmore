@@ -78,14 +78,16 @@ button {
   background-color: #f2f2f2;
 }
 
-
+.readmore-holder{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 .read-more{
   font-size: 14px;
   text-decoration: underline;
   color: #808080;
-  text-align: center;
-  display: block;
-  margin-top: 40px;
+  text-align: center;  
   text-transform: capitalize;
   &:hover{
     color: #ff6600;
@@ -243,7 +245,7 @@ ol.breadcrumb li a, ol.breadcrumb li span {
   .preloader::before{
       animation-duration:  2s  ;
   }
-    .read-more{
+    .readmore-holder{
     margin-top: 25px;
   }
 
